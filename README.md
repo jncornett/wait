@@ -32,7 +32,7 @@ This package also comes with a cancellable wait group:
 
 ```golang
 var wg wait.GroupWithCancellation
-wg.Run(func(cancel <-chan struct{}) {
+wg.Go(func(cancel <-chan struct{}) {
   for {
       select {
       case work <-input:
